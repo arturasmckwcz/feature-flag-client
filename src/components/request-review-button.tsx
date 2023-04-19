@@ -13,7 +13,7 @@ export const RequestReviewButton = () => {
   const [backgroundColor] = useFeatureFlag(detailsCtaFlagKey);
 
   return (
-    <button style={{ backgroundColor: backgroundColor as string }}>
+    <button style={{ backgroundColor: (backgroundColor as string) ?? 'grey' }}>
       Request doctor review
     </button>
   );

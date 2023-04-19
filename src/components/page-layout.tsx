@@ -9,13 +9,13 @@ import { launchBannerFlagKey } from '../featureFlagClient/feature-flag-config';
 //     general-render-launch-banner
 // Setup:
 //     Show to users with flag value: true
-const PromotionalBanner = () => {
+export const PromotionalBanner = () => {
   const [bannerFlag] = useFeatureFlag(launchBannerFlagKey);
 
   return (
     <>
       {bannerFlag ? (
-        <div className='promotional-banner'>
+        <div className='promotional-banner' data-testid='promotional-banner'>
           <p>50% launch sale! Use code TAKEHOME</p>
         </div>
       ) : null}
