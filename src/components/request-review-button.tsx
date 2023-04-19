@@ -1,11 +1,20 @@
 import React from 'react';
 
-// Problem: 
+import { useFeatureFlag } from '../featureFlagClient/ffHook';
+import { detailsCtaFlagKey } from '../featureFlagClient/feature-flag-config';
+
+// Problem:
 //     This should be coloured based on FF value
-// Feature flag name: 
+// Feature flag name:
 //     details-section-cta-colour
-// Setup: 
+// Setup:
 //     Fill background color with flag value.
-export const RequestReviewButton = () => (
-  <button>Request doctor review</button>
-)
+export const RequestReviewButton = () => {
+  const [backgroundColor] = useFeatureFlag(detailsCtaFlagKey);
+
+  return (
+    <button style={{ backgroundColor: backgroundColor as string }}>
+      Request doctor review
+    </button>
+  );
+};
