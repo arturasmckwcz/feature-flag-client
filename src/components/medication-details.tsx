@@ -17,7 +17,7 @@ export const MedicationDetails = () => {
   return (
     <>
       {flagKey === 'variation' ? (
-        <div>
+        <div data-testid='medication-details'>
           <ul>
             <li>Common side effects: {medication.sideEffects}</li>
             <li>Warning signs: {medication.warnings}</li>
